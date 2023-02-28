@@ -41,4 +41,29 @@ public class Trade extends GenericMessage {
         Time = rawData.getString(2);
         Miscellaneous = rawData.getString(5);
     }
+
+    public String getChannelName() {
+        return ChannelName;
+    }
+    public String getPair() {
+        return Pair;
+    }
+    public String getPrice() {
+        return Price;
+    }
+    public String getVolume() {
+        return Volume;
+    }
+    public String getTime() {
+        return Time;
+    }
+    public String getBuyOrSell() {
+        return BuyOrSell;
+    }
+    public String getOrderType() {
+        return OrderType;
+    }
+    public String getMiscellaneous() {
+        return Miscellaneous;
+    }
 }

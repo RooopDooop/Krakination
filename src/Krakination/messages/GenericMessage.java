@@ -5,8 +5,6 @@ import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.time.Instant;
-
 public abstract class GenericMessage {
     protected KrakinationClient api;
     protected Object rawData;

@@ -36,5 +36,42 @@ public class OHLC extends GenericMessage {
         AccumulatedVolumeInterval = ohlcProperties.getString(7);
         TradesWithinInterval = ohlcProperties.getInt(8);
     }
+
+    public String getChannelName() {
+        return ChannelName;
+    }
+    public String getPair() {
+        return Pair;
+    }
+    public int getInterval() {
+        return Interval;
+    }
+    public String getLastUpdate() {
+        return LastUpdate;
+    }
+    public String getEndTimeInterval() {
+        return EndTimeInterval;
+    }
+    public String getOpenPriceInterval() {
+        return OpenPriceInterval;
+    }
+    public String getHighPriceInterval() {
+        return HighPriceInterval;
+    }
+    public String getLowPriceInterval() {
+        return LowPriceInterval;
+    }
+    public String getClosePriceInterval() {
+        return ClosePriceInterval;
+    }
+    public String getVolumeWeightedInterval() {
+        return VolumeWeightedInterval;
+    }
+    public String getAccumulatedVolumeInterval() {
+        return AccumulatedVolumeInterval;
+    }
+    public int getTradesWithinInterval() {
+        return TradesWithinInterval;
+    }
 }
 

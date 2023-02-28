@@ -2,6 +2,7 @@ package Krakination.messages.publics;
 
 import Krakination.KrakinationClient;
 import Krakination.messages.GenericMessage;
+import org.bson.Document;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -90,8 +91,22 @@ public class Book extends GenericMessage {
         }
     }
 
+    public String getChannelName() { return ChannelName; }
+
     public String getPair() {
         return Pair;
     }
+
+    public int getDepth() { return Depth; }
+
+    public String getChecksum() { return Checksum; };
+
+    public List<BookProperties> getAskBook() {
+        return AskBook;
+    }
+
+    public List<BookProperties> getBidBook() {
+        return BidBook;
+    };
 }
 

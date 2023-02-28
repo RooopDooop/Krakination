@@ -14,6 +14,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -21,21 +23,13 @@ import java.util.HashMap;
 import java.util.List;
 
 public class SocketClient extends WebSocketClient {
-    //HashMap<String, MessageManager> messageManager = new HashMap<>();
     SystemStatus latestSystemStatus;
     KrakClientImpl api;
-
     List<SubscriptionStatus> Subscriptions = new ArrayList<>();
 
     public SocketClient(KrakClientImpl api) throws URISyntaxException {
         super(new URI("wss://ws.kraken.com"));
         this.api = api;
-
-        System.out.println(this.getClass().getSimpleName() + " - " + api.getTargetPairs());
-
-        //for (String pair: TargetPairs) {
-        //    messageManager.put(pair, new MessageManager());
-        //}
     }
 
     @Override
@@ -54,12 +48,12 @@ public class SocketClient extends WebSocketClient {
 
     @Override
     public void onClose(int i, String s, boolean b) {
-        System.out.println(i + " - " + s);
+        this.api.handleWebsocketClose(i, s, b);
     }
 
     @Override
     public void onError(Exception e) {
-        System.out.println(e);
+        this.api.handleWebsocketError(e);
     }
 
     private void handleMessage(JSONObject data) {

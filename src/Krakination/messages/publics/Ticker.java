@@ -67,4 +67,43 @@ public class Ticker extends GenericMessage {
         TodayOpenPrice = Open.getString(0);
         Last24HoursOpenPrice = Open.getString(1);
     }
+
+    public String getChannelName() {
+        return ChannelName;
+    }
+    public String getPair() {
+        return Pair;
+    }
+    public String getAskBestPrice() {
+        return AskBestPrice;
+    }
+    public int getAskWholeLotVolume() { return AskWholeLotVolume; }
+    public String getAskLotVolume() { return AskLotVolume; }
+    public String getBidBestPrice() { return BidBestPrice; }
+    public int getBidWholeLotVolume() { return BidWholeLotVolume; }
+    public String getBidLotVolume() { return BidLotVolume; }
+    public String getClosePrice() { return ClosePrice; }
+    public String getCloseLotVolume() { return CloseLotVolume; }
+    public String getTodayVolume() {
+        return TodayVolume;
+    }
+    public String getLast24HourVolume() {
+        return Last24HourVolume;
+    }
+    public String getTodayWeightedVolume() {
+        return TodayWeightedVolume;
+    }
+    public String getLast24HourWeightedVolume() {
+        return Last24HourWeightedVolume;
+    }
+    public int getTodayTrades() {
+        return TodayTrades;
+    }
+    public int getTodayLast24Hours() { return TodayLast24Hours; }
+    public String getTodayLowPrice() { return TodayLowPrice; }
+    public String getLast24HoursLowPrice() { return Last24HoursLowPrice; }
+    public String getTodayHighPrice() { return TodayHighPrice; }
+    public String getLast24HoursHighPrice() { return Last24HoursHighPrice; }
+    public String getTodayOpenPrice() { return TodayOpenPrice; }
+    public String getLast24HoursOpenPrice() { return Last24HoursOpenPrice; }
 }

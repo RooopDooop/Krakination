@@ -26,4 +26,26 @@ public class Spread extends GenericMessage {
         this.BidVolume = SpreadProperties.getString(3);
         this.AskVolume = SpreadProperties.getString(4);
     }
+
+    public String getChannelName() {
+        return ChannelName;
+    };
+    public String getPair() {
+        return Pair;
+    }
+    public String getBidPrice() {
+        return BidPrice;
+    };
+    public String getAskPrice() {
+        return AskPrice;
+    };
+    public String getTime() {
+        return Time;
+    };
+    public String getBidVolume() {
+        return BidVolume;
+    };
+    public String getAskVolume() {
+        return AskVolume;
+    };
 }
