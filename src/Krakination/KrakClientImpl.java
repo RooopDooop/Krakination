@@ -1,14 +1,11 @@
 package Krakination;
 
-import Krakination.KrakinationClient;
 import Krakination.managers.MessageManager;
 import Krakination.messages.GenericMessage;
-import Krakination.messages.generals.Subscription;
 import Krakination.net.SocketClient;
 import org.jetbrains.annotations.NotNull;
 
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class KrakClientImpl implements KrakinationClient {
@@ -28,7 +25,7 @@ public class KrakClientImpl implements KrakinationClient {
     }
 
     public void handleWebsocketClose(int i, String s, boolean b) {
-        if (i == 1006) {
+        if (i == -1 || i == 1006 || b) {
             try {
                 System.out.println("Websocket lost connection to Kraken, reconnecting...");
                 this.websocketClient = new SocketClient(this);
@@ -36,7 +33,6 @@ public class KrakClientImpl implements KrakinationClient {
             } catch (URISyntaxException e) {
                 e.printStackTrace();
             }
-
             return;
         }
 
