@@ -1,8 +1,6 @@
 package Krakination.net;
 
 import Krakination.KrakClientImpl;
-import Krakination.KrakinationClient;
-import Krakination.managers.MessageManager;
 import Krakination.messages.generals.Heartbeat;
 import Krakination.messages.generals.Subscription;
 import Krakination.messages.generals.SubscriptionStatus;
@@ -13,13 +11,9 @@ import org.java_websocket.handshake.ServerHandshake;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class SocketClient extends WebSocketClient {
@@ -108,7 +102,7 @@ public class SocketClient extends WebSocketClient {
                 }
             }
             case "spread" -> this.api.handleEvent(new Spread(data, api, data.getString(2), data.getString(3)));
-            default -> System.out.println(splitMessageName[0]);
+            default -> System.out.println("UNKNOWN: " + splitMessageName[0]);
         }
     }
 }

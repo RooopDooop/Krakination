@@ -25,7 +25,7 @@ public class KrakClientImpl implements KrakinationClient {
     }
 
     public void handleWebsocketClose(int i, String s, boolean b) {
-        if (i == -1 || i == 1006 || b) {
+        if (b) {
             try {
                 System.out.println("Websocket lost connection to Kraken, reconnecting...");
                 this.websocketClient = new SocketClient(this);
@@ -37,6 +37,7 @@ public class KrakClientImpl implements KrakinationClient {
         }
 
         System.out.println("Connection closed: " + i + " - " + s + " - " + b);
+        websocketClient.close();
     }
 
     public void handleWebsocketError(Exception e) {
